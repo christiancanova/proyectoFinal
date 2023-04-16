@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Orden de compra</title>
+  </head>
+  <body>
+    <h2>
+      Compra Realizada - Nro de orden : <%=order.numOrder%> - Usuario :
+      <%=order.email%>
+    </h2>
+    <hr />
+    <h3>Fecha : <%=order.date%></h3>
+    <h3>Datos del Usuario</h3>
+    <p><b>Email : <%=order.email%></b></p>
+    <p><b>Dirección de entrega : <%=order.adress%></b></p>
+    <p><b>Total : <%=order.totalPrice%> $</b></p>
+    <hr />
+    <h3>Pedido:</h3>
+    <%order.products.forEach(product=>{%>
+    <li>
+      <p><b>Nombre:</b> <%=product.name%></p>
+      <p><b>Descripción:</b> <%=product.description%></p>
+      <p><b>Precio:</b> <%=product.price%> $</p>
+      <p><b>Cantidad:</b> <%=product.quantity%></p>
+    </li>
+    <%})%>
+  </body>
+</html>
